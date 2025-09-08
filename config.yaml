@@ -1,0 +1,63 @@
+exchange:
+  api_key: "ZEJ12NjkIGqgqgxGTfVuialr5HhcdZKCZmYidqk8vkyy75xzALrhfzPcb8gfEhPl"
+  api_secret: "Pskf0iegGV5UsLj9qU9ibXZDeGcb8bjpQwGkW8a31ijgPJnpEWRfsHXYOxHiMcYc"
+  testnet: true
+  recv_window: 5000
+
+trade:
+  quote_asset: "USDT"
+  min_24h_quote_volume: 500000
+  entry_lookback_min: 15
+  entry_change_pct: 3.0
+  take_profit_pct: 5.0
+  stop_loss_pct: 2.0
+  trailing_stop_pct: 1.0
+  per_trade_pct: 10.0
+  max_concurrent_positions: 6
+  poll_interval_sec: 30
+  max_symbols_per_scan: 150
+  price_precision_fallback: 6
+  qty_precision_fallback: 6
+  dry_run: true
+  simulation: true
+  initial_balance: 300
+  max_daily_loss_pct: 5.0
+  max_exposure_pct: 50.0
+  in_memory: true
+
+report:
+  log_level: "WARNING"   # "INFO" لو عايز تشوف تفاصيل أكتر
+  log_dir: "./runtime_logs"
+backtest:
+  verbose_entries: false  # مايطبعش كل ENTRY/EXIT
+  verbose_forced: false   # مايطبعش FORCE EXIT
+  verbose_summary: true   # يطبع ملخص أخير لكل رمز
+  entry_cooldown_bars: 15 # يمنع إعادة الدخول قبل 15 شمعة لكل استراتيجية/رمز
+  max_bars: 2000          # عدد الشموع التاريخية
+  weight_momentum: 0.5
+  weight_ma: 0.5
+
+
+logging:
+  logfile: "bot.log"
+  level: "INFO"
+
+telegram:
+  enabled: true
+  bot_token: "7999643606:AAEv2-HFB8rCsim9DfxHxmWkoqi9aC2lsXs"
+  chat_id: "5428404600"
+  heartbeat_minutes: 30
+
+
+news:
+  crypto_panic_api_key: ""
+
+
+
+ml:
+  enabled: false
+  retrain_every_hours: 24
+
+dashboard:
+  enabled: true
+  port: 8501
